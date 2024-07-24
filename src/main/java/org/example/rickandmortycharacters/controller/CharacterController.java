@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/characters")
+@RequestMapping("/api")
 @RequiredArgsConstructor
 public class CharacterController {
 
@@ -24,7 +24,7 @@ public class CharacterController {
         return characterService.getCharacterById(id);
     }
 
-    @GetMapping
+    @GetMapping("characters")
     public List<Character> getCharactersByStatus(@RequestParam(required = false) String status) {
         if (status != null) {
             return characterService.getCharactersByStatus(status);
